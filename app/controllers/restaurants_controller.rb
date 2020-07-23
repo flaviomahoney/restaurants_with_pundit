@@ -24,6 +24,7 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
+    authorize @restaurant
     @restaurant = Restaurant.new(restaurant_params)
 
     respond_to do |format|
